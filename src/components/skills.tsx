@@ -6,7 +6,7 @@ import ts from '../assets/ts.svg'
 
 const Skills = () => {
     return (
-        <div id="skills" className="h-screen w-9/12 flex flex-col items-center justify-center w-full">
+        <div id="skills" className="min-h-screen w-9/12 flex flex-col items-center justify-start w-full pt-48">
             <h1 className="text-7xl text-white mb-28">Skills</h1>
             <div className='w-full flex space-x-36 justify-end relative'>
                 <Image src={mongo} alt="mongo" width={100} height={100} className="animate-slide-in absolute -right-28" style={{animationDelay: '0s'}} />
