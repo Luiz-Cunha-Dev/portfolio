@@ -31,3 +31,20 @@ body {
     text-wrap: balance;
   }
 }
+
+::-webkit-scrollbar {
+  width: 9px; /* Largura da barra de rolagem */
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Cor de fundo da trilha */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #597AE8; /* Cor da barra de rolagem */
+  border-radius: 30px; /* Raio da borda da barra de rolagem */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #354a90; /* Cor da barra de rolagem ao passar o mouse */
+}

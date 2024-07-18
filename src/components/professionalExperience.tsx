@@ -4,6 +4,7 @@ import { useState } from "react";
 import { MdOutlineSchool } from "react-icons/md";
 import { MdWorkOutline } from "react-icons/md";
 import { MdCalendarMonth } from "react-icons/md";
+import { motion } from "framer-motion";
 
 const ProfessiolnalExperience = () => {
   const academicBackground = [
@@ -55,34 +56,56 @@ const ProfessiolnalExperience = () => {
   const [showAcademicBackground, setShowAcademicBackground] = useState(true);
 
   return (
-    <div
+    <section
       id="professional-experience"
       className="min-h-screen w-9/12 flex flex-col items-center justify-start w-full pt-48"
     >
-      <h1 className="text-7xl text-white mb-28">Professiolnal Experience</h1>
+      <motion.h1 className="text-7xl text-white mb-28"
+      initial={{ opacity: 0, y: -100 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -100 }}
+      transition={{ duration: 0.5, delay: 0.2 }}
+      >Professiolnal Experience
+      </motion.h1>
 
       <div className="flex justify-between space-x-16 mb-12">
-        <div 
+
+        <motion.div 
         className="flex items-center space-x-5 cursor-pointer hover:text-sky-800"
         onClick={() => setShowAcademicBackground(true)}
+        initial={{ opacity: 0, x: -100 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        exit={{ opacity: 0, x: -100 }}
+        transition={{ duration: 0.4, delay: 0.4 }}
         >
           <MdOutlineSchool size={50} />
           <h2>Education</h2>
-        </div>
-        <div 
+        </motion.div>
+
+        <motion.div 
         className="flex items-center space-x-5 cursor-pointer  hover:text-sky-800"
         onClick={() => setShowAcademicBackground(false)}
+        initial={{ opacity: 0, x: 100 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        exit={{ opacity: 0, x: 100 }}
+        transition={{ duration: 0.4, delay: 0.4 }}
         >
           <MdWorkOutline size={50} />
           <h2>Professional Experience</h2>
-        </div>
+        </motion.div>
+
       </div>
 
       { showAcademicBackground ?
       
       academicBackground.map((item, index) => {
         return (
-          <div key={index} className="flex items-start min-h-32 h-full">
+          <motion.div key={index} className="flex items-start min-h-32 h-full"
+          initial={{ opacity: 0, y: -100 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -100 }}
+          transition={{ duration: 0.4, delay: index * 0.1 }}
+          >
 
               {index % 2 == 0 ? (
 
@@ -126,7 +149,7 @@ const ProfessiolnalExperience = () => {
 
               )}
             
-          </div>
+          </motion.div>
         );
       })
 
@@ -134,7 +157,12 @@ const ProfessiolnalExperience = () => {
 
       professionalExperience.map((item, index) => {
         return (
-          <div key={index} className="flex items-start min-h-32 h-full">
+          <motion.div key={index} className="flex items-start min-h-32 h-full"
+          initial={{ opacity: 0, y: -100 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -100 }}
+          transition={{ duration: 0.4, delay: index * 0.1 }}
+          >
 
               {index % 2 == 0 ? (
 
@@ -178,12 +206,12 @@ const ProfessiolnalExperience = () => {
 
               )}
             
-          </div>
+          </motion.div>
         );
       })
       
       }
-    </div>
+    </section>
   );
 };
 

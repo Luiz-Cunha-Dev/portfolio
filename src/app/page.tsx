@@ -1,10 +1,10 @@
-import Link from "next/link";
-import Header from "../components/header";
-import Introduction from "../components/introduction";
-import AboutMe from "../components/aboutMe";
-import Skills from "../components/skills";
-import ProfessiolnalExperience from "../components/professionalExperience";
-import Portflio from "../components/portfolio";
+import Header from "@/components/header";
+import Introduction from "@/components/introduction";
+import AboutMe from "@/components/aboutMe";
+import Skills from "@/components/skills";
+import ProfessiolnalExperience from "@/components/professionalExperience";
+import Portflio from "@/components/portfolio";
+import Footer from "@/components/footer";
 
 export default function Home() {
   return (
@@ -17,6 +17,7 @@ export default function Home() {
       <Skills />
       <ProfessiolnalExperience />
       <Portflio />
+      <Footer />
     </main>
   );
 }

@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Bitter } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const bitter = Bitter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Luiz Cunha | Portfolio",
@@ -15,8 +15,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html className="h-full" lang="en">
-      <body className={`${inter.className}, h-full overflow-x-hidden`}>{children}</body>
+    <html className="h-full scroll-smooth" lang="en">
+      <body className={`${bitter.className} h-full overflow-x-hidden font-bitter`}>{children}</body>
     </html>
   );
 }

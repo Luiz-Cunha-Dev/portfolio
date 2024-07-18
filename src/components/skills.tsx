@@ -1,28 +1,153 @@
-import Image from 'next/image'
-import mongo from '../assets/mongo.svg' 
-import node from '../assets/node.svg' 
-import react from '../assets/react.svg'
-import ts from '../assets/ts.svg'
+"use client";
+import Image from "next/image";
+//buscar todas as imagens (svg) dentro da pasta ../assets/skills
+import ant from "../assets/skills/ant-design.svg";
+import axios from "../assets/skills/axios.svg";
+import bootstrap from "../assets/skills/Bootstrap.svg";
+import css from "../assets/skills/CSS3.svg";
+import docker from "../assets/skills/Docker.svg";
+import dotenv from "../assets/skills/dotenv.svg";
+import express from "../assets/skills/express.svg";
+import figma from "../assets/skills/Figma.svg";
+import git from "../assets/skills/git.svg";
+import graphql from "../assets/skills/graphql.svg";
+import html from "../assets/skills/HTML5.svg";
+import insomnia from "../assets/skills/insomnia.svg";
+import js from "../assets/skills/javascript.svg";
+import jest from "../assets/skills/jest.svg";
+import json from "../assets/skills/json.svg";
+import knex from "../assets/skills/knex.svg";
+import material from "../assets/skills/Material.svg";
+import mongo from "../assets/skills/mongo.svg";
+import mysql from "../assets/skills/mysql.svg";
+import next from "../assets/skills/next.svg";
+import node from "../assets/skills/node.svg";
+import npm from "../assets/skills/npm.svg";
+import pipefy from "../assets/skills/pipefy.svg";
+import postgresql from "../assets/skills/postgresql.svg";
+import postman from "../assets/skills/postman.svg";
+import prisma from "../assets/skills/prisma.svg";
+import puppeteer from "../assets/skills/puppeteer.svg";
+import python from "../assets/skills/python.svg";
+import react from "../assets/skills/react.svg";
+import redis from "../assets/skills/redis.svg";
+import sass from "../assets/skills/sass.svg";
+import slack from "../assets/skills/slack.svg";
+import tailwind from "../assets/skills/Tailwind.svg";
+import tauri from "../assets/skills/tauri.svg";
+import trello from "../assets/skills/trello.svg";
+import ts from "../assets/skills/ts.svg";
+import ubuntu from "../assets/skills/ubuntu.svg";
+import vercel from "../assets/skills/Vercel.svg";
+import vscode from "../assets/skills/vscode.svg";
+import webpack from "../assets/skills/webpack.svg";
+import yarn from "../assets/skills/yarn.svg";
+import { motion } from "framer-motion";
 
 const Skills = () => {
-    return (
-        <div id="skills" className="min-h-screen w-9/12 flex flex-col items-center justify-start w-full pt-48">
-            <h1 className="text-7xl text-white mb-28">Skills</h1>
-            <div className='w-full flex space-x-36 justify-end relative'>
-                <Image src={mongo} alt="mongo" width={100} height={100} className="animate-slide-in absolute -right-28" style={{animationDelay: '0s'}} />
-                <Image src={node} alt="node" width={100} height={100} className="animate-slide-in absolute -right-28" style={{animationDelay: '0.6s'}} />
-                <Image src={react} alt="react" width={100} height={100} className="animate-slide-in absolute -right-28" style={{animationDelay: '1.2s'}} />
-                <Image src={ts} alt="ts" width={100} height={100} className="animate-slide-in absolute -right-28" style={{animationDelay: '1.8s'}} />
+  const skills = [
+    // Linguagens
+    js,
+    ts,
+    python,
+    html,
+    css,
+  
+    // Frameworks e Libraries
+    react,
+    next,
+    express,
+    node,
+    jest,
+    puppeteer,
+    graphql,
+    axios,
+    sass,
+    tailwind,
+    material,
+    ant,
+    bootstrap,
+  
+    // Ferramentas de Desenvolvimento
+    git,
+    vscode,
+    npm,
+    yarn,
+    docker,
+    webpack,
+    dotenv,
+    tauri,
+  
+    // Bancos de Dados
+    postgresql,
+    mysql,
+    mongo,
+    redis,
+    knex,
+    prisma,
+  
+    // Ferramentas de Teste e API
+    postman,
+    insomnia,
+  
+    // Ferramentas de Colaboração e CI/CD
+    slack,
+    trello,
+    pipefy,
+    figma,
+    vercel,
+    ubuntu,
+  ];
 
+  return (
+    <section
+      id="skills"
+      className="min-h-screen w-9/12 flex flex-col items-center justify-start w-full pt-48"
+    >
+      <motion.h1
+        className="text-7xl text-white mb-28"
+        initial={{ opacity: 0, y: -100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: -100 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+      >
+        Skills
+      </motion.h1>
 
+      <motion.div
+        className="flex items-start"
+        initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: 100 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+      >
+        {skills.map((skill, index) => {
+          return (
+            <motion.div
+              key={index}
+              className="m-4 h-48 min-w-48 flex items-center justify-center"
+              initial={{ x: '3800px' }} 
+              animate={{ x: '-3800px' }} 
+              transition={{
+                x: {
+                  repeat: Infinity,
+                  repeatType: "reverse", 
+                  duration: 20, 
+                  ease: "linear",
+                }
+              }}
+            >
+              <Image
+                src={skill}
+                alt="skill"
+                height={100}
+              />
+            </motion.div>
+          );
+        })}
+      </motion.div>
+    </section>
+  );
+};
 
-                <Image src={mongo} alt="mongo" width={100} height={100} className="animate-slide-in absolute -right-28" style={{animationDelay: '2.4s'}} />
-                <Image src={node} alt="node" width={100} height={100} className="animate-slide-in absolute -right-28" style={{animationDelay: '3s'}} />
-                <Image src={react} alt="react" width={100} height={100} className="animate-slide-in absolute -right-28" style={{animationDelay: '3.6s'}} />
-                <Image src={ts} alt="ts" width={100} height={100} className="animate-slide-in absolute -right-28" style={{animationDelay: '4.2s'}} />
-            </div>
-        </div>
-    )
-}
-
-export default Skills
+export default Skills;

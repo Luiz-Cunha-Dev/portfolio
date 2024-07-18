@@ -23,6 +23,7 @@ const config: Config = {
         'slide-in': 'slideInFromRight 6s linear infinite',
       },
     },
+    
   },
   plugins: [],
 };

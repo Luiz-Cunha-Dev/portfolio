@@ -7,6 +7,7 @@ import Typography from "@mui/material/Typography";
 import { Button, CardActionArea, CardActions } from "@mui/material";
 import { MdArrowBackIosNew, MdArrowForwardIos } from "react-icons/md";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 type Project = {
   name: string;
@@ -22,63 +23,109 @@ const Portflio = () => {
   const [page, setPage] = useState(1);
 
   useEffect(() => {
-    fetch("https://api.github.com/users/Luiz-Cunha-Dev/repos")
-      .then((response) => response.json())
-      .then((data) => setProjects(data));
+    async function fetchData() {
+      await fetch("https://api.github.com/users/Luiz-Cunha-Dev/repos")
+        .then((response) => response.json())
+        .then((data) => setProjects(data));
+    }
+    fetchData();
   }, []);
 
+  useEffect(() => {
+    console.log(projects);
+  }, [projects]);
+
   return (
-    <div
+    <section
       id="portfolio"
       className="min-h-screen w-9/12 flex flex-col items-center justify-start w-full pt-48"
     >
-      <h1 className="text-7xl text-white mb-28">Portflio</h1>
+      <motion.h1
+        className="text-7xl text-white mb-28"
+        initial={{ opacity: 0, y: -100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: -100 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+      >
+        Portfolio
+      </motion.h1>
       <div className="flex justify-between w-5/6">
-        <Button
-          onClick={() => {
-            page > 1 ? setPage(page - 1) : "";
-          }}
+        {page > 1 ? (
+          <Button
+            onClick={() => {
+              page > 1 ? setPage(page - 1) : "";
+            }}
+          >
+            <MdArrowBackIosNew size={20} />
+          </Button>
+        ) : (
+          <Button
+          disabled={true}
         >
           <MdArrowBackIosNew size={20} />
         </Button>
+        )}
+
         {projects
           .map((project, index) => {
+            
+            const newIndex = index - 4 * Math.floor(index / 4);
+
             return (
-              <Card key={index} className="w-64">
-                <CardActionArea>
-                  <CardMedia
-                    component="img"
-                    height="120"
-                    image={project.owner.avatar_url}
-                    alt="project image"
-                  />
-                  <CardContent>
-                    <Typography gutterBottom variant="h5" component="div">
-                      {project.name}
-                    </Typography>
-                    <Typography variant="body2" color="text.secondary">
-                      {project.description}
-                    </Typography>
-                  </CardContent>
-                </CardActionArea>
-                <CardActions>
-                  <Button size="small" color="primary">
-                    <Link href={project.html_url} target="_blank" >Repository</Link>
-                  </Button>
-                </CardActions>
-              </Card>
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 300 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 300 }}
+                transition={{ duration: 0.3, delay: index > 3 ? newIndex * 0.1 : index * 0.1 }}
+              >
+                <Card className="w-64">
+                  <CardActionArea>
+                    <CardMedia
+                      component="img"
+                      height="120"
+                      image={project.owner.avatar_url}
+                      alt="project image"
+                    />
+                    <CardContent>
+                      <Typography gutterBottom variant="h5" component="div">
+                        {project.name}
+                      </Typography>
+                      <Typography variant="body2" color="text.secondary">
+                        {project.description}
+                      </Typography>
+                    </CardContent>
+                  </CardActionArea>
+                  <CardActions>
+                    <Button size="small" color="primary">
+                      <Link href={project.html_url} target="_blank">
+                        Repository
+                      </Link>
+                    </Button>
+                  </CardActions>
+                </Card>
+              </motion.div>
             );
           })
-          .slice((page - 1) * 5, page * 5)}
-        <Button
-          onClick={() => {
-            page < projects.length / 5 ? setPage(page + 1) : "";
-          }}
-        >
-          <MdArrowForwardIos size={20} />
-        </Button>
+          .slice((page - 1) * 4, page * 4)}
+
+        {page < projects.length / 4 ? (
+          <Button
+            onClick={() => {
+              page < projects.length / 4 ? setPage(page + 1) : "";
+            }}
+          >
+            <MdArrowForwardIos size={20} />
+          </Button>
+        ) : (
+          <Button
+            disabled={true}
+          >
+            <MdArrowForwardIos size={20} />
+          </Button>
+        )}
       </div>
-    </div>
+    </section>
   );
 };
 
