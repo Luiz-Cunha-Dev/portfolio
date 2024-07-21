@@ -48,3 +48,38 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #354a90; /* Cor da barra de rolagem ao passar o mouse */
 }
+
+[data-theme="blue"] {
+  --bg: #0E141E;
+  --header-bg: #111827;
+  --text: #fff;
+  --highlighted-text: #597AE8;
+}
+
+[data-theme="red"] {
+  --bg: #1e0e0e;
+  --header-bg: #271111;
+  --text: #fff;
+  --highlighted-text: #e85959;
+}
+
+[data-theme="green"] {
+  --bg: #111e0e;
+  --header-bg: #132711;
+  --text: #fff;
+  --highlighted-text: #37913d;
+}
+
+[data-theme="gray"] {
+  --bg: #1a1a1a;
+  --header-bg: #272727;
+  --text: #fff;
+  --highlighted-text: #7d7d7d;
+}
+
+[data-theme="white"] {
+  --bg: #cdcdcd;
+  --header-bg: #a3a3a3;
+  --text: #676767;
+  --highlighted-text: #000000;
+}

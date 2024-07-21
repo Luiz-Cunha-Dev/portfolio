@@ -2,22 +2,26 @@ import Header from "@/components/header";
 import Introduction from "@/components/introduction";
 import AboutMe from "@/components/aboutMe";
 import Skills from "@/components/skills";
-import ProfessiolnalExperience from "@/components/professionalExperience";
+import ProfessionalExperience from "@/components/professionalExperience";
 import Portflio from "@/components/portfolio";
 import Footer from "@/components/footer";
+import { ThemeProvider } from 'next-themes'
 
 export default function Home() {
+
   return (
-    <main className="bg-[#0E141E] flex flex-col items-center">
-      <div className="w-full min-h-screen">
+    <ThemeProvider attribute="class">
+    <main className="bg-[--bg] flex flex-col items-center text-[--text] w-full overflow-x-hidden">
+      <div className="min-w-full min-h-screen flex flex-col">
       <Header />
       <Introduction />
       </div>
       <AboutMe />
       <Skills />
-      <ProfessiolnalExperience />
+      <ProfessionalExperience />
       <Portflio />
       <Footer />
     </main>
+    </ThemeProvider>
   );
 }

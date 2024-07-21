@@ -42,6 +42,8 @@ import vercel from "../assets/skills/Vercel.svg";
 import vscode from "../assets/skills/vscode.svg";
 import webpack from "../assets/skills/webpack.svg";
 import yarn from "../assets/skills/yarn.svg";
+import Link from "next/link";
+import { MdOutlineMouse, MdArrowDownward } from "react-icons/md";
 import { motion } from "framer-motion";
 
 const Skills = () => {
@@ -52,7 +54,7 @@ const Skills = () => {
     python,
     html,
     css,
-  
+
     // Frameworks e Libraries
     react,
     next,
@@ -67,7 +69,7 @@ const Skills = () => {
     material,
     ant,
     bootstrap,
-  
+
     // Ferramentas de Desenvolvimento
     git,
     vscode,
@@ -77,7 +79,7 @@ const Skills = () => {
     webpack,
     dotenv,
     tauri,
-  
+
     // Bancos de Dados
     postgresql,
     mysql,
@@ -85,11 +87,11 @@ const Skills = () => {
     redis,
     knex,
     prisma,
-  
+
     // Ferramentas de Teste e API
     postman,
     insomnia,
-  
+
     // Ferramentas de Colaboração e CI/CD
     slack,
     trello,
@@ -102,10 +104,10 @@ const Skills = () => {
   return (
     <section
       id="skills"
-      className="min-h-screen w-9/12 flex flex-col items-center justify-start w-full pt-48"
+      className="min-h-screen w-9/12 flex flex-col items-center justify-start w-full pt-48 relative max-sm:w-full max-sm:pt-20 max-sm:p-8"
     >
       <motion.h1
-        className="text-7xl text-white mb-28"
+        className="text-7xl mb-28 max-sm:text-3xl max-sm:mb-12"
         initial={{ opacity: 0, y: -100 }}
         whileInView={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: -100 }}
@@ -125,26 +127,39 @@ const Skills = () => {
           return (
             <motion.div
               key={index}
-              className="m-4 h-48 min-w-48 flex items-center justify-center"
-              initial={{ x: '3800px' }} 
-              animate={{ x: '-3800px' }} 
+              className="m-4 h-48 min-w-48 flex items-center justify-center max-sm:m-2 max-sm:min-w-44"
+              initial={{ x: "3800px" }}
+              animate={{ x: "-3800px" }}
               transition={{
                 x: {
                   repeat: Infinity,
-                  repeatType: "reverse", 
-                  duration: 20, 
+                  repeatType: "reverse",
+                  duration: 20,
                   ease: "linear",
-                }
+                },
               }}
             >
-              <Image
-                src={skill}
-                alt="skill"
-                height={100}
-              />
+              <Image src={skill} alt="skill" height={100} />
             </motion.div>
           );
         })}
+      </motion.div>
+
+      <motion.div
+        className="absolute bottom-20 max-sm:bottom-32"
+        initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: 100 }}
+        transition={{ duration: 0.4, delay: 0.5 }}
+      >
+        <Link
+          href="#professional-experience"
+          className="flex justify-center items-center w-fit h-fit space-x-2 cursor-pointer hover:translate-y-1"
+        >
+          <MdOutlineMouse size={30} className="text-[--highlighted-text]" />
+          <span>Scroll down!</span>
+          <MdArrowDownward size={30} className="text-[--highlighted-text]" />
+        </Link>
       </motion.div>
     </section>
   );

@@ -31,17 +31,13 @@ const Portflio = () => {
     fetchData();
   }, []);
 
-  useEffect(() => {
-    console.log(projects);
-  }, [projects]);
-
   return (
     <section
       id="portfolio"
-      className="min-h-screen w-9/12 flex flex-col items-center justify-start w-full pt-48"
+      className="min-h-screen w-9/12 flex flex-col items-center justify-start w-full pt-48 max-sm:w-full max-sm:pt-20 max-sm:p-8 max-sm:mt-24"
     >
       <motion.h1
-        className="text-7xl text-white mb-28"
+        className="text-7xl mb-28 max-sm:text-3xl max-sm:mb-12"
         initial={{ opacity: 0, y: -100 }}
         whileInView={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: -100 }}
@@ -49,9 +45,11 @@ const Portflio = () => {
       >
         Portfolio
       </motion.h1>
+
       <div className="flex justify-between w-5/6">
         {page > 1 ? (
           <Button
+            className="text-[--highlighted-text]"
             onClick={() => {
               page > 1 ? setPage(page - 1) : "";
             }}
@@ -59,25 +57,26 @@ const Portflio = () => {
             <MdArrowBackIosNew size={20} />
           </Button>
         ) : (
-          <Button
-          disabled={true}
-        >
-          <MdArrowBackIosNew size={20} />
-        </Button>
+          <Button disabled={true}>
+            <MdArrowBackIosNew size={20} />
+          </Button>
         )}
 
         {projects
           .map((project, index) => {
-            
             const newIndex = index - 4 * Math.floor(index / 4);
 
             return (
               <motion.div
+              className="max-sm:hidden"
                 key={index}
                 initial={{ opacity: 0, y: 300 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: 300 }}
-                transition={{ duration: 0.3, delay: index > 3 ? newIndex * 0.1 : index * 0.1 }}
+                transition={{
+                  duration: 0.3,
+                  delay: index > 3 ? newIndex * 0.1 : index * 0.1,
+                }}
               >
                 <Card className="w-64">
                   <CardActionArea>
@@ -111,6 +110,7 @@ const Portflio = () => {
 
         {page < projects.length / 4 ? (
           <Button
+            className="text-[--highlighted-text]"
             onClick={() => {
               page < projects.length / 4 ? setPage(page + 1) : "";
             }}
@@ -118,9 +118,7 @@ const Portflio = () => {
             <MdArrowForwardIos size={20} />
           </Button>
         ) : (
-          <Button
-            disabled={true}
-          >
+          <Button disabled={true}>
             <MdArrowForwardIos size={20} />
           </Button>
         )}

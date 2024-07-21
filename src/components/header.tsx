@@ -1,36 +1,105 @@
-'use client';
+"use client";
 import Image from "next/image";
 import logo from "../assets/logo-preto.png";
-import { MdOutlineColorLens } from "react-icons/md";
+import { MdOutlineColorLens, MdMenu, MdClose } from "react-icons/md";
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
+import { useTheme } from "next-themes";
 
 const Header = () => {
-    return (
-        <motion.header 
-        className="flex w-full justify-around items-center bg-[#111827] pt-4 pb-4"
-        initial={{ opacity: 0, x: -300 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        exit={{ opacity: 0, x: -300 }}
-        transition={{ duration: 0.5 }}
-        >
-            <Image src={logo} alt="logo" width={70} height={70} />
-            <ul className="flex space-x-12">
-                <li className="hover:text-sky-800">
-                    <a href="#about-me">About Me</a>
-                </li>
-                <li className="hover:text-sky-800">
-                    <a href="#skills">Skills</a>
-                </li>
-                <li className="hover:text-sky-800">
-                    <a href="#professional-experience">Professional Experience</a>
-                </li>
-                <li className="hover:text-sky-800">
-                    <a href="#portfolio">Portfolio</a>
-                </li>
-            </ul>
-            <MdOutlineColorLens size={35} className="cursor-pointer hover:text-sky-800"/>
-        </motion.header>
-    );
+  const [themeWindow, setThemeWindow] = useState(false);
+  const [menu, setMenu] = useState(false);
+  const { theme, setTheme } = useTheme();
+
+  useEffect(() => {
+    if (theme == "system") setTheme("blue");
+  }, []);
+
+  return (
+    <motion.header
+      initial={{ opacity: 0, x: -300 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      exit={{ opacity: 0, x: -300 }}
+      transition={{ duration: 0.5 }}
+    >
+      <div className="flex w-full justify-around items-center bg-[--header-bg] pt-4 pb-4 max-sm:p-2 max-sm:justify-between max-sm:pl-10 max-sm:pr-6">
+        <Image
+          src={logo}
+          alt="logo"
+          width={70}
+          height={70}
+          className="max-sm:w-12"
+        />
+        <ul className="flex space-x-12 max-sm:hidden">
+          <li className="hover:text-[--highlighted-text]">
+            <a href="#about-me">About Me</a>
+          </li>
+          <li className="hover:text-[--highlighted-text]">
+            <a href="#skills">Skills</a>
+          </li>
+          <li className="hover:text-[--highlighted-text]">
+            <a href="#professional-experience">Professional Experience</a>
+          </li>
+          <li className="hover:text-[--highlighted-text]">
+            <a href="#portfolio">Portfolio</a>
+          </li>
+        </ul>
+
+        <div className="flex flex-col justify-center items-center relative max-sm:hidden">
+          <MdOutlineColorLens
+            size={35}
+            className="cursor-pointer hover:text-[--highlighted-text]"
+            onClick={() => setThemeWindow(!themeWindow)}
+          />
+          <div
+            className={`w-52 h-14 rounded-md bg-gray-800 absolute -bottom-16 justify-between items-center p-3 
+            ${themeWindow ? "flex" : "hidden"}`}
+          >
+            <div
+              onClick={() => setTheme("blue")}
+              className={`w-8 h-8 bg-sky-950 rounded-full border-4 cursor-pointer hover:translate-y-1`}
+            ></div>
+
+            <div
+              onClick={() => setTheme("red")}
+              className={`w-8 h-8 bg-rose-900 rounded-full border-4 cursor-pointer hover:translate-y-1`}
+            ></div>
+
+            <div
+              onClick={() => setTheme("green")}
+              className={`w-8 h-8 bg-green-800 rounded-full border-4 cursor-pointer hover:translate-y-1`}
+            ></div>
+
+            <div
+              onClick={() => setTheme("gray")}
+              className={`w-8 h-8 bg-slate-500 rounded-full border-4 cursor-pointer hover:translate-y-1`}
+            ></div>
+
+            <div
+              onClick={() => setTheme("white")}
+              className={`w-8 h-8 bg-white rounded-full border-4 cursor-pointer hover:translate-y-1`}
+            ></div>
+          </div>
+        </div>
+
+        <div>
+          {menu ? (
+            <MdClose
+              onClick={() => setMenu(!menu)}
+              size={35}
+              className="cursor-pointer"
+            />
+          ) : (
+            <MdMenu
+              onClick={() => setMenu(!menu)}
+              size={35}
+              className="cursor-pointer"
+            />
+          )}
+        </div>
+      </div>
+    </motion.header>
+  );
 };
 
 export default Header;

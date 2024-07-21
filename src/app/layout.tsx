@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Bitter } from "next/font/google";
 import "./globals.css";
+import { ThemeProvider } from "next-themes";
 
 const bitter = Bitter({ subsets: ["latin"] });
 
@@ -16,7 +17,11 @@ export default function RootLayout({
 }>) {
   return (
     <html className="h-full scroll-smooth" lang="en">
-      <body className={`${bitter.className} h-full overflow-x-hidden font-bitter`}>{children}</body>
+      <body
+        className={`${bitter.className} h-full overflow-x-hidden font-bitter`}
+      >
+        <ThemeProvider>{children}</ThemeProvider>
+      </body>
     </html>
   );
 }
