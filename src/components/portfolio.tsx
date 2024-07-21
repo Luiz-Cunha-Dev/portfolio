@@ -34,7 +34,7 @@ const Portflio = () => {
   return (
     <section
       id="portfolio"
-      className="min-h-screen w-9/12 flex flex-col items-center justify-start w-full pt-48 max-sm:w-full max-sm:pt-20 max-sm:p-8 max-sm:mt-24"
+      className="min-h-screen w-9/12 flex flex-col items-center justify-start w-full pt-48 max-sm:w-full max-sm:pt-20 max-sm:p-8 max-sm:mt-44"
     >
       <motion.h1
         className="text-7xl mb-28 max-sm:text-3xl max-sm:mb-12"
