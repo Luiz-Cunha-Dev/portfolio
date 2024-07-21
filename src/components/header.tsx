@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import logo from "../assets/logo-preto.png";
+import logo from "@/assets/logo-preto.png";
 import { MdOutlineColorLens, MdMenu, MdClose } from "react-icons/md";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
