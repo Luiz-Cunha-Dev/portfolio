@@ -82,7 +82,7 @@ const Header = () => {
           </div>
         </div>
 
-        <div>
+        <div className="sm:hidden">
           {menu ? (
             <MdClose
               onClick={() => setMenu(!menu)}
@@ -96,6 +96,81 @@ const Header = () => {
               className="cursor-pointer"
             />
           )}
+        </div>
+
+        <div
+          className={`fixed w-screen h-screen opacity-90 bg-[--bg] left-0 top-16 z-10 flex-col
+          ${menu ? "flex" : "hidden"}`}
+        >
+          <ul className="flex flex-col items-center">
+            <motion.li onClick={() => setMenu(!menu)} className="hover:text-[--highlighted-text] border-b-2 w-full text-center p-6"
+              initial={{ opacity: 0, x: -100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -100 }}
+              transition={{ duration: 0.1 }}
+              >
+              <a href="#about-me">About Me</a>
+            </motion.li>
+            <motion.li onClick={() => setMenu(!menu)} className="hover:text-[--highlighted-text] border-b-2 w-full text-center p-6"
+              initial={{ opacity: 0, x: 100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: 100 }}
+              transition={{ duration: 0.1, delay:0.1 }}
+              >
+              <a href="#skills">Skills</a>
+            </motion.li>
+            <motion.li onClick={() => setMenu(!menu)} className="hover:text-[--highlighted-text] border-b-2 w-full text-center p-6"
+              initial={{ opacity: 0, x: -100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -100 }}
+              transition={{ duration: 0.1, delay:0.2 }}
+              >
+              <a href="#professional-experience">Professional Experience</a>
+            </motion.li>
+            <motion.li onClick={() => setMenu(!menu)} className="hover:text-[--highlighted-text] border-b-2 w-full text-center p-6"
+              initial={{ opacity: 0, x: 100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: 100 }}
+              transition={{ duration: 0.1, delay:0.3 }}
+              >
+              <a href="#portfolio">Portfolio</a>
+            </motion.li>
+            <motion.li className="hover:text-[--highlighted-text] border-b-2 w-full text-center p-6"
+            initial={{ opacity: 0, x: -100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -100 }}
+            transition={{ duration: 0.1, delay:0.4 }}
+            >
+              <div
+                className={`w-full h-full rounded-md bg-[--bg] justify-between items-center p-3 flex`}
+              >
+                <div
+                  onClick={() => {setTheme("blue"); setMenu(!menu);}}
+                  className={`w-8 h-8 bg-sky-950 rounded-full border-4 cursor-pointer hover:translate-y-1`}
+                ></div>
+
+                <div
+                  onClick={() => {setTheme("red"); setMenu(!menu);}}
+                  className={`w-8 h-8 bg-rose-900 rounded-full border-4 cursor-pointer hover:translate-y-1`}
+                ></div>
+
+                <div
+                  onClick={() => {setTheme("green"); setMenu(!menu);}}
+                  className={`w-8 h-8 bg-green-800 rounded-full border-4 cursor-pointer hover:translate-y-1`}
+                ></div>
+
+                <div
+                  onClick={() => {setTheme("gray"); setMenu(!menu);}}
+                  className={`w-8 h-8 bg-slate-500 rounded-full border-4 cursor-pointer hover:translate-y-1`}
+                ></div>
+
+                <div
+                  onClick={() => {setTheme("white"); setMenu(!menu);}}
+                  className={`w-8 h-8 bg-white rounded-full border-4 cursor-pointer hover:translate-y-1`}
+                ></div>
+              </div>
+            </motion.li>
+          </ul>
         </div>
       </div>
     </motion.header>
