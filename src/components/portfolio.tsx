@@ -46,7 +46,7 @@ const Portflio = () => {
   return (
     <section
       id="portfolio"
-      className="min-h-screen flex flex-col items-center justify-center w-full pt-48 max-sm:pt-20 max-sm:mt-44 max-sm:w-11/12"
+      className="min-h-screen flex flex-col items-center justify-start w-full pt-48 max-sm:pt-20 max-sm:mt-40 max-sm:w-11/12"
     >
       <motion.h1
         className="text-7xl mb-28 max-sm:text-3xl max-sm:mb-12"
@@ -81,9 +81,9 @@ const Portflio = () => {
             return (
               <motion.div
                 key={project.id}
-                initial={{ opacity: 0, y: 300 }}
+                initial={{ opacity: 0, y: 100 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: 300 }}
+                exit={{ opacity: 0, y: 100 }}
                 transition={{
                   duration: 0.3,
                   delay: index > 3 ? newIndex * 0.1 : index * 0.1,
@@ -157,9 +157,9 @@ const Portflio = () => {
               <motion.div
                 className="max-h-96 min-h-96"
                 key={project.id}
-                initial={{ opacity: 0, y: 300 }}
+                initial={{ opacity: 0, y: 100 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: 300 }}
+                exit={{ opacity: 0, y: 100 }}
                 transition={{
                   duration: 0.3,
                   delay: 0.1,

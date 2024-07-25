@@ -14,7 +14,7 @@ import { motion } from "framer-motion";
 
 const Footer = () => {
   return (
-    <footer className="flex flex-col w-full h-96 justify-center items-center bg-[--header-bg] relative mt-60 max-sm:w-full">
+    <footer className="flex flex-col w-full h-96 justify-center items-center bg-[--header-bg] relative mt-60 max-sm:w-full max-sm:mt-32">
       <div className="w-4/6 h-4/6 flex space-x-20 max-sm:space-x-0 mb-10 max-sm:flex-col max-sm:justify-center max-sm:items-center">
         <motion.div
           className="flex flex-col justify-center items-center w-fit"
@@ -75,17 +75,17 @@ const Footer = () => {
               target="_blank"
               href="https://www.linkedin.com/in/luizmcunha/"
             >
-              <AiOutlineLinkedin size={30} className="max-sm:w-5" />
+              <AiOutlineLinkedin size={30} className="max-sm:w-8" />
             </Link>
           </li>
           <li className="hover:text-[--highlighted-text]">
             <Link target="_blank" href="https://github.com/Luiz-Cunha-Dev">
-              <AiFillGithub size={30} className="max-sm:w-5" />
+              <AiFillGithub size={30} className="max-sm:w-8" />
             </Link>
           </li>
           <li className="hover:text-[--highlighted-text]">
             <Link target="_blank" href="mailto:luizcunha.dev99@gmail.com">
-              <AiOutlineMail size={30} className="max-sm:w-5" />
+              <AiOutlineMail size={30} className="max-sm:w-8" />
             </Link>
           </li>
           <li className="hover:text-[--highlighted-text]">
@@ -93,7 +93,7 @@ const Footer = () => {
               target="_blank"
               href="https://wa.me/5519987292994?text=Olá,%20Luiz!%20Encontrei%20seu%20portfólio%20online.%20Você%20está%20disponível%20para%20uma%20conversa?"
             >
-              <AiOutlineWhatsApp size={30} className="max-sm:w-5" />
+              <AiOutlineWhatsApp size={30} className="max-sm:w-8" />
             </Link>
           </li>
         </motion.ul>
