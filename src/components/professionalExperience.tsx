@@ -187,7 +187,7 @@ const ProfessionalExperience = () => {
                   >
                     <h3 className="font-bold text-lg max-sm:text-xs">{item.position}</h3>
                     <p className="text-lg mb-3 max-sm:text-xs">{item.company}</p>
-                    <div className="flex text-xs max-sm:text-xs justify-end">
+                    <div className="flex text-xs max-sm:text-xs max-sm:text-start">
                       <MdCalendarMonth min={20} size={20} className="mr-2" />
                       <span>{item.year}</span>
                     </div>

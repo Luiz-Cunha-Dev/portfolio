@@ -41,19 +41,23 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #597AE8; /* Cor da barra de rolagem */
   border-radius: 30px; /* Raio da borda da barra de rolagem */
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background: #354a90; /* Cor da barra de rolagem ao passar o mouse */
-}
 
 [data-theme="blue"] {
   --bg: #0E141E;
   --header-bg: #111827;
   --text: #fff;
   --highlighted-text: #597AE8;
+}
+
+[data-theme="blue"] ::-webkit-scrollbar-thumb {
+  background-color: #597AE8; /* Cor da barra de rolagem */
+}
+
+[data-theme="blue"] ::-webkit-scrollbar-thumb:hover {
+  background-color: #354a90; /* Cor da barra de rolagem ao passar o mouse */
 }
 
 [data-theme="red"] {
@@ -63,11 +67,27 @@ body {
   --highlighted-text: #e85959;
 }
 
+[data-theme="red"] ::-webkit-scrollbar-thumb {
+  background-color: #e85959; /* Cor da barra de rolagem */
+}
+
+[data-theme="red"] ::-webkit-scrollbar-thumb:hover {
+  background-color: #a93f3f; /* Cor da barra de rolagem ao passar o mouse */
+}
+
 [data-theme="green"] {
   --bg: #111e0e;
   --header-bg: #132711;
   --text: #fff;
   --highlighted-text: #37913d;
+}
+
+[data-theme="green"] ::-webkit-scrollbar-thumb {
+  background-color: #37913d; /* Cor da barra de rolagem */
+}
+
+[data-theme="green"] ::-webkit-scrollbar-thumb:hover {
+  background-color: #1f5222; /* Cor da barra de rolagem ao passar o mouse */
 }
 
 [data-theme="gray"] {
@@ -77,9 +97,25 @@ body {
   --highlighted-text: #7d7d7d;
 }
 
+[data-theme="gray"] ::-webkit-scrollbar-thumb {
+  background-color: #7d7d7d; /* Cor da barra de rolagem */
+}
+
+[data-theme="gray"] ::-webkit-scrollbar-thumb:hover {
+  background-color: #3c3c3c; /* Cor da barra de rolagem ao passar o mouse */
+}
+
 [data-theme="white"] {
   --bg: #cdcdcd;
   --header-bg: #a3a3a3;
   --text: #676767;
   --highlighted-text: #000000;
+}
+
+[data-theme="white"] ::-webkit-scrollbar-thumb {
+  background-color: #3e3e3e; /* Cor da barra de rolagem */
+}
+
+[data-theme="white"] ::-webkit-scrollbar-thumb:hover {
+  background-color: #000000; /* Cor da barra de rolagem ao passar o mouse */
 }

@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import logo from "../assets/logo-preto.png";
+import logo from "../assets/logo.png";
 import { MdOutlineColorLens, MdMenu, MdClose } from "react-icons/md";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
@@ -56,27 +56,27 @@ const Header = () => {
             ${themeWindow ? "flex" : "hidden"}`}
           >
             <div
-              onClick={() => setTheme("blue")}
+              onClick={() => {setTheme("blue"); setThemeWindow(!themeWindow)}} 
               className={`w-8 h-8 bg-sky-950 rounded-full border-4 cursor-pointer hover:translate-y-1`}
             ></div>
 
             <div
-              onClick={() => setTheme("red")}
+              onClick={() => {setTheme("red"); setThemeWindow(!themeWindow)}}
               className={`w-8 h-8 bg-rose-900 rounded-full border-4 cursor-pointer hover:translate-y-1`}
             ></div>
 
             <div
-              onClick={() => setTheme("green")}
+              onClick={() => {setTheme("green"); setThemeWindow(!themeWindow)}}
               className={`w-8 h-8 bg-green-800 rounded-full border-4 cursor-pointer hover:translate-y-1`}
             ></div>
 
             <div
-              onClick={() => setTheme("gray")}
+              onClick={() => {setTheme("gray"); setThemeWindow(!themeWindow)}}
               className={`w-8 h-8 bg-slate-500 rounded-full border-4 cursor-pointer hover:translate-y-1`}
             ></div>
 
             <div
-              onClick={() => setTheme("white")}
+              onClick={() => {setTheme("white"); setThemeWindow(!themeWindow)}}
               className={`w-8 h-8 bg-white rounded-full border-4 cursor-pointer hover:translate-y-1`}
             ></div>
           </div>
