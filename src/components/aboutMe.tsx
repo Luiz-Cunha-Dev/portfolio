@@ -4,6 +4,15 @@ import { MdOutlineMouse, MdArrowDownward, MdDownload  } from "react-icons/md";
 import { motion } from "framer-motion";
 
 const AboutMe = () => {
+
+  const currentDate = new Date();
+
+  const birthDate = new Date("1999-11-17");
+
+  const differenceInTime = currentDate.getTime() - birthDate.getTime();
+
+  const age = Math.floor(differenceInTime / (1000 * 3600 * 24 * 365.25));
+
   return (
     <section
       id="about-me"
@@ -26,7 +35,7 @@ const AboutMe = () => {
         exit={{ opacity: 0, y: 100 }}
         transition={{ duration: 0.5, delay: 0.1 }}
       >
-        Hello! I&apos;m 24 years old and a full stack web developer passionate about technology. I hold a technical degree in mechatronics from the technical school at UNICAMP and I am currently studying Systems Analysis and Development at the Federal Institute of São Paulo (IFSP).
+        Hello! I&apos;m {age} years old and a full stack web developer passionate about technology. I hold a technical degree in mechatronics from the technical school at UNICAMP and I am currently studying Systems Analysis and Development at the Federal Institute of São Paulo (IFSP).
       </motion.p>
 
       <motion.p
