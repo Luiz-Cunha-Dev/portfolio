@@ -7,10 +7,10 @@ const AboutMe = () => {
   return (
     <section
       id="about-me"
-      className="h-screen w-9/12 flex flex-col items-center justify-start pt-48 relative max-sm:w-full max-sm:pt-20 max-sm:p-8"
+      className="h-screen w-9/12 flex flex-col items-center justify-start pt-36 relative max-sm:w-full max-sm:pt-16 max-sm:p-8 max-sm:mt-10 max-xl:pt-16"
     >
       <motion.h1
-        className="text-7xl mb-28 max-sm:text-3xl max-sm:mb-12"
+        className="text-7xl mb-28 max-sm:text-3xl max-sm:mb-12 max-xl:text-4xl max-xl:mb-12" 
         initial={{ opacity: 0, y: -100 }}
         whileInView={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: -100 }}
@@ -19,7 +19,7 @@ const AboutMe = () => {
         About Me
       </motion.h1>
 
-      <div className="text-xl space-y-5 max-sm:text-xs">
+      <div className="text-xl space-y-5 max-sm:text-xs max-xl:text-base">
       <motion.p
         initial={{ opacity: 0, y: 100 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -48,24 +48,22 @@ const AboutMe = () => {
       </motion.p>
       </div>
 
-      {/* //botão para baixar curriculo */}
-
       <motion.div
-      className="mt-14"
+      className="mt-14 max-xl:mt-12"
       initial={{ opacity: 0, y: 100 }}
       whileInView={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: 100 }}
       transition={{ duration: 0.4, delay: 1 }}
       >
         <Link target="_blank" href="/CV- Luiz Miguel da Cunha.pdf" download={true}>
-          <button className="bg-[--highlighted-text]  px-5 py-2 rounded-lg hover:bg-[--highlighted-text]">
+          <button className="bg-[--highlighted-text]  px-5 py-2 rounded-lg hover:bg-[--highlighted-text] hover:translate-y-0.5 hover:brightness-125">
             <MdDownload size={20} className="inline-block mr-2" />
             Download my resume
             </button>
         </Link>
       </motion.div>
 
-      <motion.div className="absolute bottom-20 max-sm:bottom-32"
+      <motion.div className="absolute bottom-20 max-sm:bottom-24 max-xl:bottom-32"
       initial={{ opacity: 0, y: 60 }}
       whileInView={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: 60 }}

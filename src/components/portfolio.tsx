@@ -46,10 +46,10 @@ const Portflio = () => {
   return (
     <section
       id="portfolio"
-      className="min-h-screen flex flex-col items-center justify-start w-full pt-48 max-sm:pt-20 max-sm:mt-40 max-sm:w-11/12"
+      className="min-h-screen flex flex-col items-center justify-start w-full pt-36 max-sm:pt-16 max-sm:mt-40 max-sm:w-11/12 max-xl:pt-16"
     >
       <motion.h1
-        className="text-7xl mb-28 max-sm:text-3xl max-sm:mb-12"
+        className="text-7xl mb-28 max-sm:text-3xl max-sm:mb-12 max-xl:text-4xl max-xl:mb-12"
         initial={{ opacity: 0, y: -100 }}
         whileInView={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: -100 }}
@@ -58,10 +58,10 @@ const Portflio = () => {
         Portfolio
       </motion.h1>
 
-      <div className="flex justify-between w-5/6 max-sm:hidden min-h-96 space-x-2">
+      <div className="flex justify-between w-5/6 max-sm:hidden min-h-96 max-xl:min-h-60 max-xl:w-full">
         {page > 1 ? (
           <Button
-            className="text-[--highlighted-text] h-32 mt-48"
+            className="text-[--highlighted-text] h-32 m-3 mt-48"
             onClick={() => {
               page > 1 ? setPage(page - 1) : "";
             }}
@@ -69,7 +69,7 @@ const Portflio = () => {
             <MdArrowBackIosNew size={20} />
           </Button>
         ) : (
-          <Button disabled={true} className=" h-32 mt-48">
+          <Button disabled={true} className="h-32 m-3 mt-48">
             <MdArrowBackIosNew size={20} />
           </Button>
         )}
@@ -89,31 +89,27 @@ const Portflio = () => {
                   delay: index > 3 ? newIndex * 0.1 : index * 0.1,
                 }}
               >
-                <Card className="w-64 h-full">
-                  <CardActionArea>
-                    <CardMedia
-                      component="img"
-                      height="120"
-                      image={github.src}
-                      alt="project image"
-                    />
-                    <CardContent>
-                      <Typography gutterBottom variant="h5" component="div">
-                        {project.name}
-                      </Typography>
-                      <Typography variant="body2" color="text.secondary">
-                        {project.description}
-                      </Typography>
-                    </CardContent>
-                  </CardActionArea>
-                  <CardActions>
-                    <Button size="small" color="primary">
-                      <Link href={project.html_url} target="_blank">
-                        Repository
-                      </Link>
-                    </Button>
-                  </CardActions>
-                </Card>
+                <Link href={project.html_url} target="_blank">
+                  <Card className="w-64 h-full max-xl:w-60 hover:bg-gray-300 hover:translate-y-1">
+                    <CardActionArea>
+                      <CardMedia
+                        className="max-xl:h-36"
+                        component="img"
+                        height="120"
+                        image={github.src}
+                        alt="project image"
+                      />
+                      <CardContent>
+                        <Typography gutterBottom variant="h5" component="div">
+                          {project.name}
+                        </Typography>
+                        <Typography variant="body2" color="text.secondary">
+                          {project.description}
+                        </Typography>
+                      </CardContent>
+                    </CardActionArea>
+                  </Card>
+                </Link>
               </motion.div>
             );
           })
@@ -121,7 +117,7 @@ const Portflio = () => {
 
         {page < projects.length / 4 ? (
           <Button
-            className="text-[--highlighted-text]  h-32 mt-48"
+            className="text-[--highlighted-text] h-32 m-3 mt-48"
             onClick={() => {
               page < projects.length / 4 ? setPage(page + 1) : "";
             }}
@@ -129,7 +125,7 @@ const Portflio = () => {
             <MdArrowForwardIos size={20} />
           </Button>
         ) : (
-          <Button disabled={true} className=" h-32 mt-48">
+          <Button disabled={true} className="h-32 m-3 mt-48">
             <MdArrowForwardIos size={20} />
           </Button>
         )}
@@ -157,14 +153,15 @@ const Portflio = () => {
               <motion.div
                 className="max-h-96 min-h-96"
                 key={project.id}
-                initial={{ opacity: 0, y: 100 }}
+                initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: 100 }}
+                exit={{ opacity: 0, y: 50 }}
                 transition={{
                   duration: 0.3,
                   delay: 0.1,
                 }}
               >
+                <Link href={project.html_url} target="_blank">
                 <Card className="h-full">
                   <CardActionArea>
                     <CardMedia
@@ -182,14 +179,8 @@ const Portflio = () => {
                       </Typography>
                     </CardContent>
                   </CardActionArea>
-                  <CardActions>
-                    <Button size="small" color="primary">
-                      <Link href={project.html_url} target="_blank">
-                        Repository
-                      </Link>
-                    </Button>
-                  </CardActions>
                 </Card>
+                </Link>
               </motion.div>
             );
           })

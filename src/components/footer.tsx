@@ -14,10 +14,10 @@ import { motion } from "framer-motion";
 
 const Footer = () => {
   return (
-    <footer className="flex flex-col w-full h-96 justify-center items-center bg-[--header-bg] relative mt-60 max-sm:w-full max-sm:mt-32">
-      <div className="w-4/6 h-4/6 flex space-x-20 max-sm:space-x-0 mb-10 max-sm:flex-col max-sm:justify-center max-sm:items-center">
+    <footer className="flex flex-col w-full h-96 justify-center items-center bg-[--header-bg] relative mt-60 max-sm:w-full max-sm:mt-80 max-xl:mt-96">
+      <div className="w-4/6 h-4/6 flex space-x-16 max-sm:space-x-0 mb-10 max-sm:flex-col max-sm:justify-center max-sm:items-center max-xl:w-11/12">
         <motion.div
-          className="flex flex-col justify-center items-center w-fit"
+          className="flex flex-col justify-center items-center whitespace-nowrap"
           initial={{ opacity: 0, x: -100 }}
           whileInView={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0, x: -100 }}
@@ -30,12 +30,12 @@ const Footer = () => {
             height={90}
             className="w-20 h-20"
           />
-          <h2 className="text-3xl mb-2 mt-2">Luiz Cunha</h2>
-          <p className="text-base">Full Stack Developer</p>
+          <h2 className="text-3xl mb-2 mt-2 max-xl:text-2xl">Luiz Cunha</h2>
+          <p className="text-base max-xl:text-sm">Full Stack Developer</p>
         </motion.div>
 
         <motion.ul
-          className="flex space-x-16 max-sm:text-xs max-sm:justify-around max-sm:items-center max-sm:mt-7 max-sm:w-screen max-sm:m-0 max-sm:space-x-0 max-sm:p-4"
+          className="flex space-x-16 max-sm:text-xs max-sm:justify-around max-sm:items-center max-sm:mt-7 max-sm:w-screen max-sm:m-0 max-sm:space-x-0 max-sm:p-4 max-xl:space-x-12"
           initial={{ opacity: 0, x: 100 }}
           whileInView={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0, x: 100 }}
@@ -64,7 +64,7 @@ const Footer = () => {
         </motion.ul>
 
         <motion.ul
-          className="flex space-x-16 max-sm:text-xs max-sm:justify-around max-sm:items-center max-sm:mt-0 max-sm:w-screen max-sm:m-0 max-sm:space-x-0 max-sm:p-4"
+          className="flex space-x-16 max-sm:text-xs max-sm:justify-around max-sm:items-center max-sm:mt-0 max-sm:w-screen max-sm:m-0 max-sm:space-x-0 max-sm:p-4 max-xl:space-x-12"
           initial={{ opacity: 0, x: 100 }}
           whileInView={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0, x: 100 }}

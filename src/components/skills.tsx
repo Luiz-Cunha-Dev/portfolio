@@ -94,10 +94,10 @@ const Skills = () => {
   return (
     <section
       id="skills"
-      className="min-h-screen w-9/12 flex flex-col items-center justify-start w-full pt-48 relative max-sm:w-full max-sm:pt-20 max-sm:p-8"
+      className="min-h-screen flex flex-col items-center justify-start w-full pt-36 relative max-sm:w-full max-sm:pt-16 max-sm:p-8  max-xl:pt-16"
     >
       <motion.h1
-        className="text-7xl mb-28 max-sm:text-3xl max-sm:mb-12"
+        className="text-7xl mb-28 max-sm:text-3xl max-sm:mb-12 max-xl:text-4xl max-xl:mb-12"
         initial={{ opacity: 0, y: -100 }}
         whileInView={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: -100 }}
@@ -113,11 +113,11 @@ const Skills = () => {
         exit={{ opacity: 0, y: 100 }}
         transition={{ duration: 0.5, delay: 0.2 }}
       >
-        {skills.map((skill, index) => {
+        {skills.map((skill) => {
           return (
             <motion.div
-              key={index}
-              className="m-4 h-48 min-w-48 flex items-center justify-center max-sm:m-2 max-sm:min-w-44"
+              key={skill.src}
+              className="m-4 h-48 min-w-48 flex items-center justify-center max-sm:m-2 max-sm:min-w-44 max-xl:min-w-40 "
               initial={{ x: "3800px" }}
               animate={{ x: "-3800px" }}
               transition={{
@@ -136,7 +136,7 @@ const Skills = () => {
       </motion.div>
 
       <motion.div
-        className="absolute bottom-20 max-sm:bottom-32"
+        className="absolute bottom-20 max-sm:bottom-32 max-xl:bottom-44"
         initial={{ opacity: 0, y: 100 }}
         whileInView={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: 100 }}

@@ -62,10 +62,10 @@ const ProfessionalExperience = () => {
   return (
     <section
       id="professional-experience"
-      className="min-h-screen w-9/12 flex flex-col items-center justify-start w-full pt-48 relative pb-40 mmax-sm:w-full max-sm:pt-20 max-sm:p-8"
+      className="min-h-screen flex flex-col items-center justify-start w-full pt-36 relative pb-40 mmax-sm:w-full max-sm:pt-16 max-sm:p-8 max-xl:pt-16"
     >
       <motion.h1
-        className="text-7xl mb-28 max-sm:text-3xl max-sm:mb-12 max-sm:text-center"
+        className="text-7xl mb-28 max-sm:text-3xl max-sm:mb-12 max-sm:text-center max-xl:text-4xl max-xl:mb-12"
         initial={{ opacity: 0, y: -100 }}
         whileInView={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: -100 }}
@@ -74,7 +74,7 @@ const ProfessionalExperience = () => {
         Professional Experience
       </motion.h1>
 
-      <div className="flex justify-between space-x-16 mb-12 max-sm:space-x-8">
+      <div className="flex justify-between space-x-16 mb-12 max-sm:space-x-8 max-xl:text-base">
         <motion.div
           className="flex items-center space-x-5 cursor-pointer hover:text-[--highlighted-text] max-sm:text-xs"
           onClick={() => setShowAcademicBackground(true)}

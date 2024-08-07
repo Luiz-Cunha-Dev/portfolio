@@ -15,11 +15,11 @@ const Introduction = () => {
   return (
     <section
       id="introduction"
-      className="flex items-top justify-around items-center min-h-full min-w-full mt-44 relative max-sm:flex-col max-sm:w-full max-sm:mt-0 max-sm:flex-1 max-sm:justify-start max-sm:static"
+      className="flex items-top justify-around items-center min-h-full min-w-full mt-44 relative max-sm:flex-col max-sm:w-full max-sm:mt-0 max-sm:flex-1 max-sm:justify-start max-sm:static max-xl:mt-16"
     >
       <div className="h-full flex flex-col justify-center items-center pt-12 max-sm:p-3 max-sm:pt-10">
         <motion.h1
-          className="text-7xl mb-2 max-sm:text-4xl max-sm:min-w-full"
+          className="text-7xl mb-2 max-sm:text-4xl max-sm:min-w-full max-xl:text-5xl"
           initial={{ opacity: 0, x: -100 }}
           whileInView={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0, x: -100 }}
@@ -30,7 +30,7 @@ const Introduction = () => {
           name is <span className="text-[--highlighted-text]">Luiz Cunha</span>.
         </motion.h1>
         <motion.p
-          className="text-3xl max-sm:text-xl max-sm:text-wrap "
+          className="text-3xl max-sm:text-xl max-sm:text-wrap max-xl:text-xl"
           initial={{ opacity: 0, x: -100 }}
           whileInView={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0, x: -100 }}
@@ -52,7 +52,7 @@ const Introduction = () => {
             alt="me"
             width={425}
             height={425}
-            className="rounded-md mb-4 max-sm:max-w-52 max-sm:mt-4"
+            className="rounded-md mb-4 max-sm:max-w-52 max-sm:mt-4 max-xl:max-w-72"
           />
         </motion.div>
         <motion.ul

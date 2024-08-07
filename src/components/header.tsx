@@ -15,8 +15,17 @@ const Header = () => {
     if (theme == "system") setTheme("blue");
   }, []);
 
+  useEffect(() => {
+    if (menu) {
+      document.body.classList.add("overflow-y-hidden");
+    } else {
+      document.body.classList.remove("overflow-y-hidden");
+    }
+  }, [menu]);
+
   return (
     <motion.header
+      className="relative w-full"
       initial={{ opacity: 0, x: -300 }}
       whileInView={{ opacity: 1, x: 0 }}
       exit={{ opacity: 0, x: -300 }}
@@ -28,7 +37,7 @@ const Header = () => {
           alt="logo"
           width={70}
           height={70}
-          className="max-sm:w-12"
+          className="max-sm:w-12 max-xl:w-12"
         />
         <ul className="flex space-x-12 max-sm:hidden">
           <li className="hover:text-[--highlighted-text]">
@@ -56,27 +65,42 @@ const Header = () => {
             ${themeWindow ? "flex" : "hidden"}`}
           >
             <div
-              onClick={() => {setTheme("blue"); setThemeWindow(!themeWindow)}} 
+              onClick={() => {
+                setTheme("blue");
+                setThemeWindow(!themeWindow);
+              }}
               className={`w-8 h-8 bg-sky-950 rounded-full border-4 cursor-pointer hover:translate-y-1`}
             ></div>
 
             <div
-              onClick={() => {setTheme("red"); setThemeWindow(!themeWindow)}}
+              onClick={() => {
+                setTheme("red");
+                setThemeWindow(!themeWindow);
+              }}
               className={`w-8 h-8 bg-rose-900 rounded-full border-4 cursor-pointer hover:translate-y-1`}
             ></div>
 
             <div
-              onClick={() => {setTheme("green"); setThemeWindow(!themeWindow)}}
+              onClick={() => {
+                setTheme("green");
+                setThemeWindow(!themeWindow);
+              }}
               className={`w-8 h-8 bg-green-800 rounded-full border-4 cursor-pointer hover:translate-y-1`}
             ></div>
 
             <div
-              onClick={() => {setTheme("gray"); setThemeWindow(!themeWindow)}}
+              onClick={() => {
+                setTheme("gray");
+                setThemeWindow(!themeWindow);
+              }}
               className={`w-8 h-8 bg-slate-500 rounded-full border-4 cursor-pointer hover:translate-y-1`}
             ></div>
 
             <div
-              onClick={() => {setTheme("white"); setThemeWindow(!themeWindow)}}
+              onClick={() => {
+                setTheme("white");
+                setThemeWindow(!themeWindow);
+              }}
               className={`w-8 h-8 bg-white rounded-full border-4 cursor-pointer hover:translate-y-1`}
             ></div>
           </div>
@@ -99,73 +123,97 @@ const Header = () => {
         </div>
 
         <div
-          className={`fixed w-screen h-screen opacity-90 bg-[--bg] left-0 top-16 z-10 flex-col
+          className={`sm:hidden fixed w-screen min-h-screen opacity-90 bg-[--bg] left-0 top-16 z-10 flex-col
           ${menu ? "flex" : "hidden"}`}
         >
           <ul className="flex flex-col items-center">
-            <motion.li onClick={() => setMenu(!menu)} className="hover:text-[--highlighted-text] border-b-2 w-full text-center p-6"
+            <motion.li
+              onClick={() => setMenu(!menu)}
+              className="hover:text-[--highlighted-text] border-b-2 w-full text-center p-6"
               initial={{ opacity: 0, x: -100 }}
               whileInView={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -100 }}
               transition={{ duration: 0.1 }}
-              >
+            >
               <a href="#about-me">About Me</a>
             </motion.li>
-            <motion.li onClick={() => setMenu(!menu)} className="hover:text-[--highlighted-text] border-b-2 w-full text-center p-6"
+            <motion.li
+              onClick={() => setMenu(!menu)}
+              className="hover:text-[--highlighted-text] border-b-2 w-full text-center p-6"
               initial={{ opacity: 0, x: 100 }}
               whileInView={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: 100 }}
-              transition={{ duration: 0.1, delay:0.1 }}
-              >
+              transition={{ duration: 0.1, delay: 0.1 }}
+            >
               <a href="#skills">Skills</a>
             </motion.li>
-            <motion.li onClick={() => setMenu(!menu)} className="hover:text-[--highlighted-text] border-b-2 w-full text-center p-6"
+            <motion.li
+              onClick={() => setMenu(!menu)}
+              className="hover:text-[--highlighted-text] border-b-2 w-full text-center p-6"
               initial={{ opacity: 0, x: -100 }}
               whileInView={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -100 }}
-              transition={{ duration: 0.1, delay:0.2 }}
-              >
+              transition={{ duration: 0.1, delay: 0.2 }}
+            >
               <a href="#professional-experience">Professional Experience</a>
             </motion.li>
-            <motion.li onClick={() => setMenu(!menu)} className="hover:text-[--highlighted-text] border-b-2 w-full text-center p-6"
+            <motion.li
+              onClick={() => setMenu(!menu)}
+              className="hover:text-[--highlighted-text] border-b-2 w-full text-center p-6"
               initial={{ opacity: 0, x: 100 }}
               whileInView={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: 100 }}
-              transition={{ duration: 0.1, delay:0.3 }}
-              >
+              transition={{ duration: 0.1, delay: 0.3 }}
+            >
               <a href="#portfolio">Portfolio</a>
             </motion.li>
-            <motion.li className="hover:text-[--highlighted-text] border-b-2 w-full text-center p-6"
-            initial={{ opacity: 0, x: -100 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -100 }}
-            transition={{ duration: 0.1, delay:0.4 }}
+            <motion.li
+              className="hover:text-[--highlighted-text] border-b-2 w-full text-center p-6"
+              initial={{ opacity: 0, x: -100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -100 }}
+              transition={{ duration: 0.1, delay: 0.4 }}
             >
               <div
                 className={`w-full h-full rounded-md bg-[--bg] justify-between items-center p-3 flex`}
               >
                 <div
-                  onClick={() => {setTheme("blue"); setMenu(!menu);}}
+                  onClick={() => {
+                    setTheme("blue");
+                    setMenu(!menu);
+                  }}
                   className={`w-8 h-8 bg-sky-950 rounded-full border-4 cursor-pointer hover:translate-y-1`}
                 ></div>
 
                 <div
-                  onClick={() => {setTheme("red"); setMenu(!menu);}}
+                  onClick={() => {
+                    setTheme("red");
+                    setMenu(!menu);
+                  }}
                   className={`w-8 h-8 bg-rose-900 rounded-full border-4 cursor-pointer hover:translate-y-1`}
                 ></div>
 
                 <div
-                  onClick={() => {setTheme("green"); setMenu(!menu);}}
+                  onClick={() => {
+                    setTheme("green");
+                    setMenu(!menu);
+                  }}
                   className={`w-8 h-8 bg-green-800 rounded-full border-4 cursor-pointer hover:translate-y-1`}
                 ></div>
 
                 <div
-                  onClick={() => {setTheme("gray"); setMenu(!menu);}}
+                  onClick={() => {
+                    setTheme("gray");
+                    setMenu(!menu);
+                  }}
                   className={`w-8 h-8 bg-slate-500 rounded-full border-4 cursor-pointer hover:translate-y-1`}
                 ></div>
 
                 <div
-                  onClick={() => {setTheme("white"); setMenu(!menu);}}
+                  onClick={() => {
+                    setTheme("white");
+                    setMenu(!menu);
+                  }}
                   className={`w-8 h-8 bg-white rounded-full border-4 cursor-pointer hover:translate-y-1`}
                 ></div>
               </div>
