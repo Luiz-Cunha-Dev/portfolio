@@ -35,7 +35,7 @@ const ProfessionalExperience = () => {
     {
       course: "Systems Analysis and Development",
       institution: "Instituto Federal de São Paulo (IFSP)",
-      year: "Currently in the 4th semester",
+      year: "2025",
     },
   ];
 
@@ -53,7 +53,12 @@ const ProfessionalExperience = () => {
     {
       position: "Intern in Systems Analysis and Development",
       company: "Atuale Imobiliária – Hortolândia, São Paulo",
-      year: "2023 (1 year and 4 months)",
+      year: "2023 to 2025 (1 year and 6 months)",
+    },
+    {
+      position: "Full Stack Developer",
+      company: "Atuale Imobiliária – Hortolândia, São Paulo",
+      year: "Mar 2025 - Present",
     },
   ];
 

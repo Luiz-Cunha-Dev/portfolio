@@ -35,7 +35,7 @@ const AboutMe = () => {
         exit={{ opacity: 0, y: 100 }}
         transition={{ duration: 0.5, delay: 0.1 }}
       >
-        Hello! I&apos;m {age} years old and a full stack web developer passionate about technology. I hold a technical degree in mechatronics from the technical school at UNICAMP and I am currently studying Systems Analysis and Development at the Federal Institute of São Paulo (IFSP).
+        Hello! I&apos;m {age} years old and a full stack web developer passionate about technology. I hold a technical degree in mechatronics from the technical school at UNICAMP and a degree in Systems Analysis and Development from the Federal Institute of São Paulo (IFSP).
       </motion.p>
 
       <motion.p
