@@ -201,7 +201,6 @@ This project is open source and available under the [MIT License](LICENSE).
 - 💼 LinkedIn: [@luizmcunha](https://www.linkedin.com/in/luizmcunha/)
 - 🐙 GitHub: [@Luiz-Cunha-Dev](https://github.com/Luiz-Cunha-Dev)
 - 📧 Email: luizcunha.dev99@gmail.com
-- 📱 WhatsApp: +55 19 98729-2994
 
 ---
 
